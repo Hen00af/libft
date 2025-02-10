@@ -12,10 +12,10 @@
 - Git Hub
 ## 🚀 インストール & 実行方法
 1. リポジトリをクローン  
-- git clone [https://github.com/Hen00af/your-repo.git](https://github.com/Hen00af/libft.git)
+ git clone [https://github.com/Hen00af/your-repo.git](https://github.com/Hen00af/libft.git)
 2. クローンしたリポジトリに移動
-- cd libft
+ cd libft
 3. makefileを実行
-- make bonus
+ make bonus
 
 
