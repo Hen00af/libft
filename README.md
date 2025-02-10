@@ -11,7 +11,6 @@
 -バージョン管理:\gitHub
 - Git Hub
 ## 🚀 インストール & 実行方法
-## 🚀 インストール & 実行方法
 1. リポジトリをクローン  
 git clone [https://github.com/Hen00af/your-repo.git](https://github.com/Hen00af/libft.git)
 cd libft
