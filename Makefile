@@ -1,63 +1,42 @@
 CC = cc
-IFLAGS = -I./.
-CFLAGS = -O2
+CFLAGS =  -I./.
+AR = ar rcs
+NAME = libft.a
+OBJ_DIR = objects
 
 SRCS = \
-    file/ft_putchar_fd.c \
-    file/ft_putnbr_fd.c \
-    file/ft_putendl_fd.c \
-    file/ft_putstr_fd.c \
-    lib/ft_atoi.c \
-    lib/ft_bzero.c \
-    lib/ft_calloc.c \
-    lib/ft_isalnum.c \
-    lib/ft_isalpha.c \
-    lib/ft_isascii.c \
-    lib/ft_isdigit.c \
-    lib/ft_isprint.c \
-    lib/ft_itoa.c \
-    lib/ft_lstadd_back_bonus.c \
-    lib/ft_lstadd_front_bonus.c \
-    lib/ft_lstclear_bonus.c \
-    lib/ft_lstdelone_bonus.c \
-    lib/ft_lstiter_bonus.c \
-    lib/ft_lstlast_bonus.c \
-    lib/ft_lstmap_bonus.c \
-    lib/ft_lstnew_bonus.c \
-    lib/ft_lstsize_bonus.c \
-    lib/ft_substr.c \
-    lib/ft_tolower.c \
-    lib/ft_toupper.c \
-    memory/ft_memchr.c \
-    memory/ft_memcmp.c \
-    memory/ft_memmove.c \
-    memory/ft_memcpy.c \
-    memory/ft_memset.c \
-    monolist/ft_lstadd_back_bonus.c \
-    monolist/ft_lstadd_front_bonus.c \
-    monolist/ft_lstclear_bonus.c \
-    monolist/ft_lstdelone_bonus.c \
-    monolist/ft_lstiter_bonus.c \
-    monolist/ft_lstlast_bonus.c \
-    monolist/ft_lstmap_bonus.c \
-    monolist/ft_lstnew_bonus.c \
-    monolist/ft_lstsize_bonus.c
+    memory/ft_memchr.c memory/ft_memcmp.c memory/ft_memcpy.c \
+    memory/ft_memmove.c memory/ft_memset.c \
+    monolist/ft_lstadd_back_bonus.c monolist/ft_lstadd_front_bonus.c \
+    monolist/ft_lstclear_bonus.c monolist/ft_lstdelone_bonus.c \
+    monolist/ft_lstiter_bonus.c monolist/ft_lstlast_bonus.c \
+    monolist/ft_lstmap_bonus.c monolist/ft_lstnew_bonus.c \
+    monolist/ft_lstsize_bonus.c \
+    put/ft_putchar_fd.c put/ft_putnbr_fd.c put/ft_putendl_fd.c put/ft_putstr_fd.c \
+    str/ft_strchr.c str/ft_strdup.c str/ft_striteri.c str/ft_strjoin.c \
+    str/ft_strlcat.c str/ft_strlcpy.c str/ft_strlen.c str/ft_strmapi.c \
+    str/ft_strncmp.c str/ft_strnstr.c str/ft_strrchr.c str/ft_strtrim.c \
+    str/ft_substr.c str/ft_tolower.c str/ft_toupper.c \
+    util/ft_atoi.c util/ft_bzero.c util/ft_calloc.c util/ft_isalnum.c \
+    util/ft_isalpha.c util/ft_isascii.c util/ft_isdigit.c util/ft_isprint.c \
+    util/ft_itoa.c util/ft_split.c \
+    twinlist/creat_dlist.c \ twinlist/creat_node.c \ twinlist/free_tlist.c
 
-OBJS = $(SRCS:%.c=objects/%.o)
+OBJS = $(SRCS:%.c=$(OBJ_DIR)/%.o)
 
-all: libft.a
+all: $(NAME)
 
-libft.a: $(OBJS)
-	ar rcs $@ $(OBJS)
+$(NAME): $(OBJS)
+	$(AR) $@ $^
 
-objects/%.o: %.c
+$(OBJ_DIR)/%.o: %.c
 	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
-	rm -f libft.a
+	rm -f $(NAME)
 
 re: fclean all

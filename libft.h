@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 14:18:05 by shattori          #+#    #+#             */
-/*   Updated: 2025/02/11 00:51:53 by marvin           ###   ########.fr       */
+/*   Updated: 2025/02/13 15:07:38 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,26 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+//for monolist
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
+	struct s_list	*prev;
 }					t_list;
+
+ // for twinlist
+typedef struct dnode{    
+	int data;
+    struct dnode *prev;
+    struct dnode *next;
+}DNode;
+typedef struct dlist{
+    DNode   *head;
+    DNode   *tail;
+    int size;
+}DList;
+ // for twinlist
 
 t_list				*ft_lstnew(void *content);
 void				ft_lstadd_front(t_list **lst, t_list *new);
@@ -72,5 +87,12 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+void add_back(DList *list,int data);
+void add_front(DList *list, int data);
+DList *create_dlist();
+DNode *create_node (int data);
+void free_list(DList *list) ;
+
+
 
 #endif /* LIBFT_H */
