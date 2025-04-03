@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+#include <stdio.h>
 
 //for monolist
 typedef struct s_list
@@ -25,7 +26,7 @@ typedef struct s_list
 
  // for twinlist
 typedef struct dnode{    
-	int data;
+	int value;
     struct dnode *prev;
     struct dnode *next;
 }DNode;
@@ -87,12 +88,13 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
-void add_back(DList *list,int data);
-void add_front(DList *list, int data);
+void add_back(DNode *list,int data);
+void add_front(DNode *list, int data);
 DList *create_dlist();
 DNode *create_node (int data);
-void free_list(DList *list) ;
-
-
-
+void free_list(DNode *list) ;
+void ft_swap(void *a, void *b, size_t size);
+void ft_qsort(void *base, size_t num, size_t size, int (*cmp)(const void *, const void *));
+int ft_compare_int(const void *a, const void *b);
+DNode *initialize_stack();
 #endif /* LIBFT_H */
