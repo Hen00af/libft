@@ -31,7 +31,7 @@ make bonus
 -バージョン管理:GitHub
 ## 🚀 インストール & 実行方法
 1. リポジトリをクローン  
- git clone [https://github.com/Hen00af/your-repo.git](https://github.com/Hen00af/libft.git)
+ git clone [[https://github.com/Hen00af/your-repo.git](https://github.com/Hen00af/libft.git](https://github.com/Hen00af/libft.git))
 2. クローンしたリポジトリに移動.
   cd libft
 3. makefileを実行.
