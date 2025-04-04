@@ -1,14 +1,14 @@
 #include "libft.h"
 
-t_DNode	*initialize_stack(void)
+t_DList	*initialize_stack(void)
 {
-	t_DNode *stack_info;
+	t_DList *stack_info;
 
-	stack_info = (t_DNode *)malloc(sizeof(t_DNode));
+	stack_info = (t_DList *)malloc(sizeof(t_DList));
 	if (!stack_info)
 		exit(1);
-	stack_info->next = NULL;
-	stack_info->prev = NULL;
-	stack_info->value = 0;
+	stack_info->head = NULL;
+	stack_info->tail = NULL;
+	stack_info->size = 0;
 	return (stack_info);
 }

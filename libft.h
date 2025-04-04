@@ -6,7 +6,7 @@
 /*   By: shattori <shattori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 14:18:05 by shattori          #+#    #+#             */
-/*   Updated: 2025/04/05 03:11:32 by shattori         ###   ########.fr       */
+/*   Updated: 2025/04/05 03:16:33 by shattori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void				ft_swap(void *a, void *b, size_t size);
 void				ft_qsort(void *base, size_t num, size_t size,
 						int (*cmp)(const void *, const void *));
 int					ft_compare_int(const void *a, const void *b);
-t_DNode				*initialize_stack(void);
+t_DList				*initialize_stack(void);
 void				add_back(t_DList *list, int data);
 
 #endif /* LIBFT_H */
