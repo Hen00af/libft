@@ -1,10 +1,10 @@
 #include "libft.h"
 
-DNode	*create_node(int data)
+t_DNode	*create_node(int data)
 {
-	DNode	*new_node;
+	t_DNode	*new_node;
 
-	new_node = (DNode *)malloc(sizeof(DNode));
+	new_node = (t_DNode *)malloc(sizeof(t_DNode));
 	if (!new_node)
 		return (NULL);
 	new_node->value = data;

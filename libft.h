@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: shattori <shattori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 14:18:05 by shattori          #+#    #+#             */
-/*   Updated: 2025/02/13 15:07:38 by marvin           ###   ########.fr       */
+/*   Updated: 2025/04/05 03:11:32 by shattori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-#include <stdio.h>
 
-//for monolist
+// for monolist
 typedef struct s_list
 {
 	void			*content;
@@ -24,18 +24,20 @@ typedef struct s_list
 	struct s_list	*prev;
 }					t_list;
 
- // for twinlist
-typedef struct dnode{    
-	int value;
-    struct dnode *prev;
-    struct dnode *next;
-}DNode;
-typedef struct dlist{
-    DNode   *head;
-    DNode   *tail;
-    int size;
-}DList;
- // for twinlist
+// for twinlist
+typedef struct t_dnode
+{
+	int				value;
+	struct t_dnode	*prev;
+	struct t_dnode	*next;
+}					t_DNode;
+typedef struct t_dlist
+{
+	t_DNode			*head;
+	t_DNode			*tail;
+	int				size;
+}					t_DList;
+// for twinlist
 
 t_list				*ft_lstnew(void *content);
 void				ft_lstadd_front(t_list **lst, t_list *new);
@@ -71,7 +73,7 @@ char				*ft_strtrim(char const *s1, char const *set);
 char				**ft_split(char const *s, char c);
 char				*ft_itoa(int n);
 char				*ft_strmapi(const char *s, char (*f)(unsigned int, char));
-int     			ft_putchar_fd(char c, int fd);
+int					ft_putchar_fd(char c, int fd);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
@@ -88,13 +90,16 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
-void add_back(DNode *list,int data);
-void add_front(DNode *list, int data);
-DList *create_dlist();
-DNode *create_node (int data);
-void free_list(DNode *list) ;
-void ft_swap(void *a, void *b, size_t size);
-void ft_qsort(void *base, size_t num, size_t size, int (*cmp)(const void *, const void *));
-int ft_compare_int(const void *a, const void *b);
-DNode *initialize_stack();
+t_DList				*create_dlist(void);
+void				add_front(t_DList *list, int data);
+t_DList				*create_dlist(void);
+t_DNode				*create_node(int data);
+void				free_list(t_DList *list);
+void				ft_swap(void *a, void *b, size_t size);
+void				ft_qsort(void *base, size_t num, size_t size,
+						int (*cmp)(const void *, const void *));
+int					ft_compare_int(const void *a, const void *b);
+t_DNode				*initialize_stack(void);
+void				add_back(t_DList *list, int data);
+
 #endif /* LIBFT_H */

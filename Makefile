@@ -21,7 +21,8 @@ SRCS = \
     util/ft_isalpha.c util/ft_isascii.c util/ft_isdigit.c util/ft_isprint.c \
     util/ft_itoa.c util/ft_split.c util/ft_swap.c util/ft_qsort.c util/ft_compare_int.c\
     twinlist/create_dlist.c twinlist/create_node.c \
-    twinlist/free_tlist.c twinlist/add_back.c twinlist/add_front.c
+    twinlist/free_tlist.c twinlist/add_back.c twinlist/add_front.c twinlist/initialize_stack.c \
+
 
 OBJS = $(SRCS:%.c=$(OBJ_DIR)/%.o)
 
