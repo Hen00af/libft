@@ -6,7 +6,7 @@
 /*   By: shattori <shattori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 14:18:05 by shattori          #+#    #+#             */
-/*   Updated: 2025/04/05 03:16:33 by shattori         ###   ########.fr       */
+/*   Updated: 2025/04/05 05:11:07 by shattori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int					ft_strncmp(const char *string1, const char *string2,
 						size_t count);
 char				*ft_substr(char const *s, unsigned int start, size_t z);
 char				*ft_strtrim(char const *s1, char const *set);
-char				**ft_split(char const *s, char c);
+char				**ft_split(char *str, char *charset);
 char				*ft_itoa(int n);
 char				*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 int					ft_putchar_fd(char c, int fd);
@@ -90,16 +90,16 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
-t_DList				*create_dlist(void);
-void				add_front(t_DList *list, int data);
-t_DList				*create_dlist(void);
-t_DNode				*create_node(int data);
-void				free_list(t_DList *list);
+t_DList				*ft_create_dlist(void);
+void				ft_add_front(t_DList *list, int data);
+t_DList				*ft_create_dlist(void);
+t_DNode				*ft_create_node(int data);
+void				ft_free_list(t_DList *list);
 void				ft_swap(void *a, void *b, size_t size);
 void				ft_qsort(void *base, size_t num, size_t size,
 						int (*cmp)(const void *, const void *));
 int					ft_compare_int(const void *a, const void *b);
-t_DList				*initialize_stack(void);
-void				add_back(t_DList *list, int data);
+t_DList				*ft_initialize_stack(void);
+void				ft_add_back(t_DList *list, int data);
 
 #endif /* LIBFT_H */

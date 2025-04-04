@@ -1,18 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_compare_int.c                                   :+:      :+:    :+:   */
+/*   add_back.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shattori <shattori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/05 04:53:02 by shattori          #+#    #+#             */
-/*   Updated: 2025/04/05 04:53:03 by shattori         ###   ########.fr       */
+/*   Created: 2025/04/05 04:45:40 by shattori          #+#    #+#             */
+/*   Updated: 2025/04/05 05:09:29 by shattori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_compare_int(const void *a, const void *b)
+void	ft_add_back(t_DList *list, int data)
 {
-	return (*(int *)a - *(int *)b);
+	t_DNode	*new_node;
+
+	new_node = create_node(data);
+	if (!new_node)
+		return ;
+	if (list->tail == NULL)
+	{
+		list->head = new_node;
+		list->tail = new_node;
+	}
+	else
+	{
+		new_node->prev = list->tail;
+		list->tail->next = new_node;
+		list->tail = new_node;
+	}
+	list->size++;
 }
