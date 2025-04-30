@@ -19,6 +19,7 @@
 // pointers to elements and returns an integer
 // void ft_qsort(void *base, size_t num, size_t size, int (*cmp)(const void *,
 //		const void *))
+//in defort , this sort is upraizing ex)) 0 1 2 3 -> 3 2 1 0  
 
 size_t	partition(void *base, size_t num, size_t size, int (*cmp)(const void *,
 			const void *))

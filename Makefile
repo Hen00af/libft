@@ -19,7 +19,8 @@ SRCS = \
     str/ft_substr.c str/ft_tolower.c str/ft_toupper.c \
     util/ft_atoi.c util/ft_bzero.c util/ft_calloc.c util/ft_isalnum.c \
     util/ft_isalpha.c util/ft_isascii.c util/ft_isdigit.c util/ft_isprint.c \
-    util/ft_itoa.c util/ft_split.c util/ft_swap.c util/ft_qsort.c util/ft_compare_int.c\
+    util/ft_itoa.c util/ft_split.c util/ft_swap.c util/ft_qsort.c util/ft_compare_int.c util/ft_abs.c\
+    util/ft_perror.c\
     twinlist/ft_create_dlist.c twinlist/ft_create_node.c \
     twinlist/ft_free_tlist.c twinlist/ft_add_back.c twinlist/ft_add_front.c twinlist/ft_initialize_stack.c \
 

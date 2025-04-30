@@ -101,5 +101,6 @@ void				ft_qsort(void *base, size_t num, size_t size,
 int					ft_compare_int(const void *a, const void *b);
 t_DList				*ft_initialize_stack(void);
 void				ft_add_back(t_DList *list, int data);
-
+int 				ft_abs(int num);
+void 				ft_perror(char *message_len);
 #endif /* LIBFT_H */
